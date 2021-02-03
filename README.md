@@ -22,7 +22,7 @@
 The Head of HR has asked you to help them organise a list of employee names. They would like a page where they can view a table of all employees' names, and the ability to enter new names. They would also like to be able to alphabetize the names as this makes it easier for them to read the list. 
 You will also need to consider styling the page to make it more visually appealing to the user. 
 
-You shouldn't spend too long on this task, approx 2 hours should be enough. We are more interested in seeing how you approach the problem at hand and the way you tackle it than spending too long making it perfect. 
+You shouldn't spend too long on this task, approx 2-3 hours should be enough. We are more interested in seeing how you approach the problem at hand and the way you tackle it than spending too long making it perfect. 
 Please do separate commits as you go along, with clear commit messages. 
 
 This page should show: 
