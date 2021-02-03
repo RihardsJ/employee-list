@@ -8,7 +8,7 @@
 - An IDE to work from
 - A Gitlab account so you can fork this repo and make commits
 
-### To run
+### To run
 
 - Fork this repo
 - Run `yarn install`
