@@ -2,6 +2,14 @@
 
 ## Getting started
 
+### Prerequisites
+
+- You will need node and yarn installed
+- An IDE to work from
+- A Gitlab account so you can fork this repo and make commits
+
+### To run
+
 - Fork this repo
 - Run `yarn install`
 - Run `yarn start`
@@ -14,7 +22,8 @@
 The Head of HR has asked you to help them organise a list of employee names. They would like a page where they can view a table of all employees' names, and the ability to enter new names. They would also like to be able to alphabetize the names as this makes it easier for them to read the list. 
 You will also need to consider styling the page to make it more visually appealing to the user. 
 
-You should spend no longer than one hour on this test. 
+You shouldn't spend too long on this task, approx 2 hours should be enough. We are more interested in seeing how you approach the problem at hand and the way you tackle it than spending too long making it perfect. 
+Please do separate commits as you go along, with clear commit messages. 
 
 This page should show: 
 - A title for the page
