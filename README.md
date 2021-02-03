@@ -14,6 +14,7 @@
 - Run `yarn install`
 - Run `yarn start`
 - Open [http://localhost:3020](http://localhost:3020) to view this project in the browser.
+- To run tests, run `yarn test`
 
 ## Code Test
 
@@ -41,6 +42,7 @@ Please consider:
 - A method to get the name from the input field and display it in the table below
 - A table displaying all the names of employees
 - A method to alphabetize the names
+- It's fine to use React state to store the names rather than connecting to a database
 
 
 ### Styling

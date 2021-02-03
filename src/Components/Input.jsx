@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 
 
 const InputField = () => {
-    const [nameList, setNameList] = useState(["Jonathan", "Mary"]);
+    // const [nameList, setNameList] = useState(["Jonathan", "Mary"]);
 
     return (
         <>
