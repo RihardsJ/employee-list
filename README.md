@@ -1,4 +1,4 @@
-# Junior Software Engineer Code Test - Apolitical
+# Software Engineer Code Test - Apolitical
 
 ## Getting started
 
