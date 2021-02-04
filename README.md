@@ -1,4 +1,4 @@
-# Software Engineer Code Test - Apolitical
+# Software Engineer Coding Exercise - Apolitical
 
 ## Getting started
 
@@ -16,7 +16,7 @@
 - Open [http://localhost:3020](http://localhost:3020) to view this project in the browser.
 - To run tests, run `yarn test`
 
-## Code Test
+## Coding Exercise
 
 ### Overview
 
@@ -69,7 +69,7 @@ If you have time, additional considerations you can add are:
 - Any other features or considerations you think would be useful to the user (you are welcome to use any yarn/npm packages you wish for this)
 
 
-## Submitting your test
+## Submitting your work
 
 - In your forked repo, make your commits and push.
 - Ensure your repo is set to public view
