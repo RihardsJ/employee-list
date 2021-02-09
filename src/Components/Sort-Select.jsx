@@ -10,6 +10,9 @@ const Select = styled.select`
   background-color: var(--white);
   padding: 0.25rem 1rem;
   font-size: 1.1rem;
+  &:focus {
+    outline: dashed var(--red);
+  }
 `;
 
 const SortEmployeeNames = () => {
