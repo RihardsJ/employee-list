@@ -16,9 +16,12 @@ const App = () => {
   ];
 
   const [employees, setEmployees] = useState(defaultValues);
+  const [employeeIndex, setEmployeeIndex] = useState("0");
+  const [displayStatus, setDisplayStatus] = useState("none");
 
   const globalStates = {
-    data: { employees, setEmployees },
+    data: { employees, setEmployees, employeeIndex, setEmployeeIndex },
+    editForm: { displayStatus, setDisplayStatus },
   };
 
   useEffect(() => {
