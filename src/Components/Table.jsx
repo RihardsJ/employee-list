@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import { EmployeeContext } from "../Utils/Context";
+import { ReactComponent as EditSVG } from "../Images/edit-icon.svg";
+import { ReactComponent as DeleteSVG } from "../Images/delete-icon.svg";
+import { ReactComponent as ProfileSVG } from "../Images/profile-icon.svg";
 
 const Table = styled.table``;
 
@@ -13,6 +16,13 @@ const TH = styled.th``;
 const TD = styled.td``;
 
 const TR = styled.tr``;
+
+const EditIcon = styled(EditSVG)``;
+const DeleteIcon = styled(DeleteSVG)``;
+
+const Button = styled.button``;
+
+const ProfileIcon = styled(ProfileSVG)``;
 
 const Head = () => {
   const DisplayTitles = () => {
