@@ -8,7 +8,17 @@ const Form = styled.form``;
 
 const InputLabel = styled(Label)``;
 
-const OpenFormButton = styled(Button)``;
+const OpenFormButton = styled(Button)`
+  float: left;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 3px;
+  font-weight: 700;
+  box-shadow: 1px -2px 1px hsl(0, 0%, 0%, 0.5);
+  background-color: white;
+  color: black;
+`;
 
 const SubmitButton = styled(Button)``;
 
