@@ -48,8 +48,19 @@ const Body = () => {
     employees.forEach((employee, i) => {
       rows.push(
         <TR key={i}>
+          <TD>
+            <ProfileIcon />
+          </TD>
           <TD>{employee.name}</TD>
           <TD>{employee.email}</TD>
+          <TD>
+            <Button>
+              <EditIcon />
+            </Button>
+            <Button>
+              <DeleteIcon />
+            </Button>
+          </TD>
         </TR>
       );
     });
