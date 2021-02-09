@@ -1,4 +1,5 @@
 import Input from "./Components/Input";
+import Title from "./Components/Title";
 import React, { useEffect, useState } from "react";
 import { EmployeeContext } from "./Utils/Context";
 import getEmployeeData from "./Utils/getEmployeeData";
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <EmployeeContext.Provider value={employees}>
+      <Title>Employee List</Title>
       <Input />
     </EmployeeContext.Provider>
   );
