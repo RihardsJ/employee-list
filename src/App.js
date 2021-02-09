@@ -3,8 +3,8 @@ import Table from "./Components/Table";
 import Input from "./Components/Input";
 import SortEmployeeNames from "./Components/Sort-Select";
 import React, { useEffect, useState } from "react";
-import { EmployeeContext } from "./Utils/Context";
 import getEmployeeData from "./Utils/getEmployeeData";
+import { EmployeeContext } from "./Utils/Context";
 
 const App = () => {
   const defaultValues = [
@@ -16,12 +16,16 @@ const App = () => {
 
   const [employees, setEmployees] = useState(defaultValues);
 
+  const globalStates = {
+    data: { employees, setEmployees },
+  };
+
   useEffect(() => {
     getEmployeeData(setEmployees);
   }, []);
 
   return (
-    <EmployeeContext.Provider value={employees}>
+    <EmployeeContext.Provider value={globalStates}>
       <Title>Employee List</Title>
       <SortEmployeeNames />
       <Table />
