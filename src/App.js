@@ -1,5 +1,6 @@
-import Input from "./Components/Input";
 import Title from "./Components/Title";
+import Table from "./Components/Table";
+import Input from "./Components/Input";
 import SortEmployeeNames from "./Components/Sort-Select";
 import React, { useEffect, useState } from "react";
 import { EmployeeContext } from "./Utils/Context";
@@ -23,6 +24,7 @@ const App = () => {
     <EmployeeContext.Provider value={employees}>
       <Title>Employee List</Title>
       <SortEmployeeNames />
+      <Table />
       <Input />
     </EmployeeContext.Provider>
   );
