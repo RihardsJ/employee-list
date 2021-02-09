@@ -1,13 +1,40 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "Bellota";
+  src: local(Bellota-Regular),
+    url(./Fonts/Bellota-Regular.ttf) format("truetype");
+  font-display: swap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+  font-family: "Bellota";
+  src: local(Bellota-Bold), url(./Fonts/Bellota-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bellota Text";
+  src: local(BellotaText-Regular),
+    url(./Fonts/BellotaText-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bellota Text";
+  src: local(BellotaText-Bold),
+    url(./Fonts/BellotaText-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --title-font: "Bellota", cursive;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  font-family: "Bellota Text", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
