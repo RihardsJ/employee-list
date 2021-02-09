@@ -13,13 +13,24 @@ const OpenFormButton = styled(Button)``;
 const SubmitButton = styled(Button)``;
 
 const InputField = () => {
-  const { employees } = useContext(EmployeeContext);
+  const { data } = useContext(EmployeeContext);
 
   const nameValidation = "[a-zA-Z ]+";
   const emailValidation = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}$";
 
+  const [newEmployee, setNewEmployee] = useState({ name: "", email: "" });
+
+  const handleChange = (key) => ({ target: { value } }) =>
+    setNewEmployee((prevData) => ({ ...prevData, [key]: value }));
+
+  const addNewEmployeeToList = (event) => {
+    event.preventDefault();
+    data.setEmployees((employeeList) => [...employeeList, newEmployee]);
+    setNewEmployee({ name: "", email: "" });
+  };
+
   return (
-    <Form position="open" id="inputForm">
+    <Form position="open" onSubmit={addNewEmployeeToList} id="inputForm">
       <OpenFormButton type="button">close</OpenFormButton>
       <FieldSet>
         <Legend>New Employee</Legend>
@@ -29,14 +40,19 @@ const InputField = () => {
           id="input-name"
           autoComplete="false"
           pattern={nameValidation}
+          autoCapitalize="word"
           required
+          value={newEmployee.name}
+          onChange={handleChange("name")}
         />
         <InputLabel htmlFor="input-email">Email:</InputLabel>
         <Input
           type="text"
           id="input-email"
-          pattern={emailValidation}
           autoComplete="false"
+          pattern={emailValidation}
+          value={newEmployee.email}
+          onChange={handleChange("email")}
         />
         <SubmitButton type="submit">Add</SubmitButton>
       </FieldSet>
