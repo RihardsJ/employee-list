@@ -5,6 +5,7 @@ import { ReactComponent as ProfileIcon } from "../Images/profile-icon.svg";
 import { ReactComponent as BurgerIcon } from "../Images/burger-icon.svg";
 import { useState, useContext } from "react";
 import { EmployeeContext } from "../Utils/Context";
+import device from "../Utils/Device-Size";
 
 const Form = styled.form`
   position: fixed;
@@ -13,6 +14,10 @@ const Form = styled.form`
   transition: transform 0.9s ease-out;
   transform: ${(props) => (props.position ? "" : "translateY(85%)")};
   z-index: 6;
+
+  @media ${device.largeMobile} {
+    transform: ${(props) => (props.position ? "" : "translateY(100%)")};
+  }
 `;
 
 const InputLabel = styled(Label)`
@@ -21,6 +26,10 @@ const InputLabel = styled(Label)`
 
 const SubmitButton = styled(Button)`
   grid-area: ${(props) => props["gridPosition"]};
+
+  @media ${device.samllLaptop} {
+    width: 180px;
+  }
 `;
 
 const OpenFormButton = styled(Button)`
@@ -33,6 +42,10 @@ const OpenFormButton = styled(Button)`
   box-shadow: 1px -2px 1px hsl(0, 0%, 0%, 0.5);
   background-color: var(--white);
   color: var(--black);
+
+  @media ${device.largeMobile} {
+    transform: translateY(-30px);
+  }
 `;
 
 const InputField = () => {
