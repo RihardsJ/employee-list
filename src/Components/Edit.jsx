@@ -42,7 +42,7 @@ const CloseButton = styled(Button)`
 `;
 
 const EditField = () => {
-  const { data } = useContext(EmployeeContext);
+  const { data, editForm } = useContext(EmployeeContext);
 
   const nameValidation = "[a-zA-Z ]+";
   const emailValidation = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}$";
@@ -57,6 +57,8 @@ const EditField = () => {
 
   const closeForm = (event) => {
     event.preventDefault();
+    editForm.setDisplayStatus("none");
+    document.body.style.overflow = "scroll";
   };
 
   const handleChange = (key) => ({ target: { value } }) =>
@@ -67,11 +69,12 @@ const EditField = () => {
     data.setEmployees(
       updateRecord(data.employees, data.employeeIndex, newRecord)
     );
+    editForm.setDisplayStatus("none");
     document.body.style.overflow = "scroll";
   };
 
   return (
-    <Form display="none" onSubmit={handleSubmit}>
+    <Form display={editForm.displayStatus} onSubmit={handleSubmit}>
       <CloseButton
         type="button"
         bgColour="grey"

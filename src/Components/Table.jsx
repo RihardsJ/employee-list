@@ -46,6 +46,13 @@ const Body = () => {
   const displayTableRows = ({ employees, setEmployees }) => {
     const rows = [];
 
+    const updateRecords = (employee, setDisplayStatus, setEmployeeIndex) => {
+      const recordIndex = data.employees.indexOf(employee);
+      setDisplayStatus("flex");
+      document.body.style.overflow = "hidden";
+      setEmployeeIndex(recordIndex);
+    };
+
     employees.forEach((employee, i) => {
       rows.push(
         <TR key={i}>
@@ -55,7 +62,15 @@ const Body = () => {
           <TD>{employee.name}</TD>
           <TD>{employee.email}</TD>
           <TD>
-            <Button onClick={"openEditform"}>
+            <Button
+              onClick={() =>
+                updateRecords(
+                  employee,
+                  editForm.setDisplayStatus,
+                  data.setEmployeeIndex
+                )
+              }
+            >
               <EditIcon />
             </Button>
             <Button
