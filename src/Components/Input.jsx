@@ -2,16 +2,11 @@ import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import Button from "./Button";
 import { EmployeeContext } from "../Utils/Context";
+import { Label, FieldSet, Legend, Input } from "./Form-Elements";
 
 const Form = styled.form``;
 
-const FieldSet = styled.fieldset``;
-
-const Legend = styled.legend``;
-
-const InputLabel = styled.label``;
-
-const Input = styled.input``;
+const InputLabel = styled(Label)``;
 
 const OpenFormButton = styled(Button)``;
 
