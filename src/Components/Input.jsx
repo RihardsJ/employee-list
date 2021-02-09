@@ -18,7 +18,13 @@ const InputField = () => {
   const nameValidation = "[a-zA-Z ]+";
   const emailValidation = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}$";
 
+  const [isOpen, setIsOpen] = useState(true);
   const [newEmployee, setNewEmployee] = useState({ name: "", email: "" });
+
+  const openCloseForm = (event) => {
+    event.preventDefault();
+    setIsOpen(!isOpen);
+  };
 
   const handleChange = (key) => ({ target: { value } }) =>
     setNewEmployee((prevData) => ({ ...prevData, [key]: value }));
@@ -31,7 +37,9 @@ const InputField = () => {
 
   return (
     <Form position="open" onSubmit={addNewEmployeeToList} id="inputForm">
-      <OpenFormButton type="button">close</OpenFormButton>
+      <OpenFormButton type="button" onClick={openCloseForm}>
+        {isOpen ? "x" : "="}
+      </OpenFormButton>
       <FieldSet>
         <Legend>New Employee</Legend>
         <InputLabel htmlFor="input-name">Name:</InputLabel>
