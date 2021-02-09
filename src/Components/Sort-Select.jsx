@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { Label } from "./Form-Elements";
 import { EmployeeContext } from "../Utils/Context";
 import { useContext } from "react";
-import { ascending, descending } from "../Utils/Sort";
+import ascending from "../Utils/Ascending-Sort";
+import descending from "../Utils/Descending-Sort";
 
 const Select = styled.select`
   color: red;
