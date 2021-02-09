@@ -1,8 +1,10 @@
-import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import Button from "./Button";
-import { EmployeeContext } from "../Utils/Context";
 import { Label, FieldSet, Legend, Input } from "./Form-Elements";
+import { ReactComponent as ProfileIcon } from "../Images/profile-icon.svg";
+import { ReactComponent as BurgerIcon } from "../Images/burger-icon.svg";
+import { useState, useContext } from "react";
+import { EmployeeContext } from "../Utils/Context";
 
 const Form = styled.form`
   position: fixed;
@@ -13,9 +15,13 @@ const Form = styled.form`
   z-index: 6;
 `;
 
-const InputLabel = styled(Label)``;
+const InputLabel = styled(Label)`
+  grid-area: ${(props) => props["gridPosition"]};
+`;
 
-const SubmitButton = styled(Button)``;
+const SubmitButton = styled(Button)`
+  grid-area: ${(props) => props["gridPosition"]};
+`;
 
 const OpenFormButton = styled(Button)`
   float: left;
@@ -54,32 +60,53 @@ const InputField = () => {
 
   return (
     <Form position={isOpen} onSubmit={addNewEmployeeToList} id="inputForm">
-      <OpenFormButton type="button" onClick={openCloseForm}>
-        {isOpen ? "x" : "="}
+      <OpenFormButton
+        type="button"
+        onClick={openCloseForm}
+        colour="green"
+        position={isOpen}
+        aria-label={isOpen ? "input-form-opened" : "input-form-closed"}
+      >
+        {isOpen ? "x" : <BurgerIcon />}
       </OpenFormButton>
       <FieldSet>
-        <Legend>New Employee</Legend>
-        <InputLabel htmlFor="input-name">Name:</InputLabel>
+        <Legend>
+          <ProfileIcon /> New Employee
+        </Legend>
+        <InputLabel htmlFor="input-name" gridPosition="1 / 1">
+          Name:
+        </InputLabel>
         <Input
           type="text"
           id="input-name"
           autoComplete="false"
           pattern={nameValidation}
+          gridPosition="1 / 2"
           autoCapitalize="word"
           required
           value={newEmployee.name}
           onChange={handleChange("name")}
         />
-        <InputLabel htmlFor="input-email">Email:</InputLabel>
+        <InputLabel htmlFor="input-email" gridPosition="2 / 1">
+          Email:
+        </InputLabel>
         <Input
           type="text"
           id="input-email"
           autoComplete="false"
+          gridPosition="2 / 2"
           pattern={emailValidation}
           value={newEmployee.email}
           onChange={handleChange("email")}
         />
-        <SubmitButton type="submit">Add</SubmitButton>
+        <SubmitButton
+          type="submit"
+          bgColour="red"
+          colour="white"
+          gridPosition="3 / 2 "
+        >
+          Add
+        </SubmitButton>
       </FieldSet>
     </Form>
   );
