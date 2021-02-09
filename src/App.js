@@ -1,6 +1,7 @@
 import Title from "./Components/Title";
 import Table from "./Components/Table";
 import Input from "./Components/Input";
+import Edit from "./Components/Edit";
 import SortEmployeeNames from "./Components/Sort-Select";
 import React, { useEffect, useState } from "react";
 import getEmployeeData from "./Utils/getEmployeeData";
@@ -30,6 +31,7 @@ const App = () => {
       <SortEmployeeNames />
       <Table />
       <Input />
+      <Edit />
     </EmployeeContext.Provider>
   );
 };
