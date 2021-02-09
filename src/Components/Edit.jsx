@@ -1,9 +1,11 @@
 import Button from "./Button";
 import { Legend, Label, Input } from "./Form-Elements";
 import styled from "styled-components";
+import { ReactComponent as ProfileIcon } from "../Images/profile-icon.svg";
 import { useEffect, useState, useContext } from "react";
 import { EmployeeContext } from "../Utils/Context";
 import updateRecord from "../Utils/UpdateRecord";
+import device from "../Utils/Device-Size";
 
 const Form = styled.form`
   top: 0;
@@ -13,21 +15,29 @@ const Form = styled.form`
   height: 100vh;
   width: 100%;
   display: ${(props) => props.display};
+  background-color: var(--transparent);
   z-index: 7;
 `;
 
-const InputLabel = styled(Label)``;
+const InputLabel = styled(Label)`
+  grid-area: ${(props) => props["gridPosition"]};
+`;
 
 const CenteredFieldset = styled.fieldset`
   height: 230px;
   margin-top: 20vh;
-  background-color: grey;
+  background-color: var(--grey);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   border-style: none;
   border-radius: 21px;
+
+  @media ${device.smallTablet} {
+    width: 350px;
+    height: 300px;
+  }
 `;
 
 const Title = styled(Legend)`
