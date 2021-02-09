@@ -13,7 +13,7 @@ const Select = styled.select`
 `;
 
 const SortEmployeeNames = () => {
-  const { employees } = useContext(EmployeeContext);
+  const { data } = useContext(EmployeeContext);
 
   const sortEmployeeList = ({ target }) => {
     const order = target.value;
@@ -22,7 +22,7 @@ const SortEmployeeNames = () => {
       descending: descending,
     };
 
-    return console.log(sort[order](employees));
+    return data.setEmployees(sort[order](data.employees));
   };
 
   return (
