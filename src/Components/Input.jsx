@@ -15,6 +15,8 @@ const Form = styled.form`
 
 const InputLabel = styled(Label)``;
 
+const SubmitButton = styled(Button)``;
+
 const OpenFormButton = styled(Button)`
   float: left;
   width: 2rem;
@@ -23,11 +25,9 @@ const OpenFormButton = styled(Button)`
   border-radius: 3px;
   font-weight: 700;
   box-shadow: 1px -2px 1px hsl(0, 0%, 0%, 0.5);
-  background-color: white;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
 `;
-
-const SubmitButton = styled(Button)``;
 
 const InputField = () => {
   const { data } = useContext(EmployeeContext);
@@ -53,7 +53,7 @@ const InputField = () => {
   };
 
   return (
-    <Form position="open" onSubmit={addNewEmployeeToList} id="inputForm">
+    <Form position={isOpen} onSubmit={addNewEmployeeToList} id="inputForm">
       <OpenFormButton type="button" onClick={openCloseForm}>
         {isOpen ? "x" : "="}
       </OpenFormButton>
