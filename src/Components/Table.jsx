@@ -27,7 +27,7 @@ const ProfileIcon = styled(ProfileSVG)``;
 
 const Head = () => {
   const DisplayTitles = () => {
-    const titles = ["name", "email"].map((title, i) => (
+    const titles = ["", "name", "email", ""].map((title, i) => (
       <TH key={i}>{title}</TH>
     ));
     return titles;
