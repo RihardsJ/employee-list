@@ -94,28 +94,43 @@ const EditField = () => {
         Close
       </CloseButton>
       <CenteredFieldset>
-        <Title>{currentEmployee.name}</Title>
-        <InputLabel htmlFor="edit-name">Name:</InputLabel>
+        <Title>
+          <ProfileIcon /> {currentEmployee.name}
+        </Title>
+        <InputLabel htmlFor="edit-name" gridPosition="1 / 1">
+          Name:
+        </InputLabel>
         <Input
           type="text"
           id="edit-name"
           autoComplete="false"
           pattern={nameValidation}
+          gridPosition="1 / 2"
           autoCapitalize="word"
           value={newRecord.name}
           onChange={handleChange("name")}
           required
         />
-        <InputLabel htmlFor="edit-email">Email:</InputLabel>
+        <InputLabel htmlFor="edit-email" gridPosition="2 / 1">
+          Email:
+        </InputLabel>
         <Input
           type="text"
           id="edit-email"
           autoComplete="false"
+          gridPosition="2 / 2"
           pattern={emailValidation}
           value={newRecord.email}
           onChange={handleChange("email")}
         />
-        <Button type="submit">Update</Button>
+        <Button
+          type="submit"
+          bgColour="red"
+          colour="white"
+          gridPosition="3 / 2 "
+        >
+          Update
+        </Button>
       </CenteredFieldset>
     </Form>
   );
