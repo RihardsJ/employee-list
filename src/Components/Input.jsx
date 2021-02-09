@@ -1,16 +1,81 @@
-import React, {useState} from 'react';
+import React, { useState, useContext } from "react";
+import styled from "styled-components";
+import Button from "./Button";
+import { EmployeeContext } from "../Utils/Context";
+import { Label, FieldSet, Legend, Input } from "./Form-Elements";
 
+const Form = styled.form``;
 
+const InputLabel = styled(Label)``;
+
+const OpenFormButton = styled(Button)`
+  float: left;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 3px;
+  font-weight: 700;
+  box-shadow: 1px -2px 1px hsl(0, 0%, 0%, 0.5);
+  background-color: white;
+  color: black;
+`;
+
+const SubmitButton = styled(Button)``;
 
 const InputField = () => {
-    // const [nameList, setNameList] = useState(["Jonathan", "Mary"]);
+  const { data } = useContext(EmployeeContext);
 
-    return (
-        <>
-        Component here
-        </>
+  const nameValidation = "[a-zA-Z ]+";
+  const emailValidation = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}$";
 
-    )
+  const [isOpen, setIsOpen] = useState(true);
+  const [newEmployee, setNewEmployee] = useState({ name: "", email: "" });
+
+  const openCloseForm = (event) => {
+    event.preventDefault();
+    setIsOpen(!isOpen);
+  };
+
+  const handleChange = (key) => ({ target: { value } }) =>
+    setNewEmployee((prevData) => ({ ...prevData, [key]: value }));
+
+  const addNewEmployeeToList = (event) => {
+    event.preventDefault();
+    data.setEmployees((employeeList) => [...employeeList, newEmployee]);
+    setNewEmployee({ name: "", email: "" });
+  };
+
+  return (
+    <Form position="open" onSubmit={addNewEmployeeToList} id="inputForm">
+      <OpenFormButton type="button" onClick={openCloseForm}>
+        {isOpen ? "x" : "="}
+      </OpenFormButton>
+      <FieldSet>
+        <Legend>New Employee</Legend>
+        <InputLabel htmlFor="input-name">Name:</InputLabel>
+        <Input
+          type="text"
+          id="input-name"
+          autoComplete="false"
+          pattern={nameValidation}
+          autoCapitalize="word"
+          required
+          value={newEmployee.name}
+          onChange={handleChange("name")}
+        />
+        <InputLabel htmlFor="input-email">Email:</InputLabel>
+        <Input
+          type="text"
+          id="input-email"
+          autoComplete="false"
+          pattern={emailValidation}
+          value={newEmployee.email}
+          onChange={handleChange("email")}
+        />
+        <SubmitButton type="submit">Add</SubmitButton>
+      </FieldSet>
+    </Form>
+  );
 };
 
 export default InputField;
