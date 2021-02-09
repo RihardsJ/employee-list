@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import { EmployeeContext } from "../Utils/Context";
+import deleteRecord from "../Utils/DeleteRecord";
 import { ReactComponent as EditSVG } from "../Images/edit-icon.svg";
 import { ReactComponent as DeleteSVG } from "../Images/delete-icon.svg";
 import { ReactComponent as ProfileSVG } from "../Images/profile-icon.svg";
@@ -40,7 +41,7 @@ const Head = () => {
 };
 
 const Body = () => {
-  const { data } = useContext(EmployeeContext);
+  const { data, editForm } = useContext(EmployeeContext);
 
   const displayTableRows = ({ employees, setEmployees }) => {
     const rows = [];
@@ -54,10 +55,12 @@ const Body = () => {
           <TD>{employee.name}</TD>
           <TD>{employee.email}</TD>
           <TD>
-            <Button>
+            <Button onClick={"openEditform"}>
               <EditIcon />
             </Button>
-            <Button>
+            <Button
+              onClick={() => setEmployees(deleteRecord(employees, employee))}
+            >
               <DeleteIcon />
             </Button>
           </TD>

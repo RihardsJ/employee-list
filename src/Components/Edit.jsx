@@ -71,7 +71,7 @@ const EditField = () => {
   };
 
   return (
-    <Form display="block" onSubmit={handleSubmit}>
+    <Form display="none" onSubmit={handleSubmit}>
       <CloseButton
         type="button"
         bgColour="grey"
