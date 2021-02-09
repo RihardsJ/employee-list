@@ -28,6 +28,14 @@
 }
 
 :root {
+  box-sizing: border-box;
+  --green: hsl(184, 100%, 24%);
+  --red: #c51613;
+  --yellow: hsl(47, 94%, 51%);
+  --grey: hsl(0, 0%, 77%);
+  --dark-grey: hsl(0, 0%, 27%);
+  --white: #f6f6f6;
+  --transparent: hsla(0, 0%, 0%, 0.8);
   --title-font: "Bellota", cursive;
 }
 
