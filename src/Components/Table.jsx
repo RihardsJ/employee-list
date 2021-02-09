@@ -15,24 +15,39 @@ const TD = styled.td``;
 const TR = styled.tr``;
 
 const Head = () => {
+  const DisplayTitles = () => {
+    const titles = ["name", "email"].map((title, i) => (
+      <TH key={i}>{title}</TH>
+    ));
+    return titles;
+  };
+
   return (
     <THead>
-      <TR>
-        <TH>Name</TH>
-        <TH>Email</TH>
-      </TR>
+      <TR>{DisplayTitles()}</TR>
     </THead>
   );
 };
 
 const Body = () => {
-  return (
-    <TBody>
-      <TR>
-        <TD></TD>
-      </TR>
-    </TBody>
-  );
+  const { data } = useContext(EmployeeContext);
+
+  const displayTableRows = ({ employees, setEmployees }) => {
+    const rows = [];
+
+    employees.forEach((employee, i) => {
+      rows.push(
+        <TR key={i}>
+          <TD>{employee.name}</TD>
+          <TD>{employee.email}</TD>
+        </TR>
+      );
+    });
+
+    return rows;
+  };
+
+  return <TBody>{displayTableRows(data)}</TBody>;
 };
 
 const TableField = () => {
