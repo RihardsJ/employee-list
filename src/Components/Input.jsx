@@ -4,7 +4,14 @@ import Button from "./Button";
 import { EmployeeContext } from "../Utils/Context";
 import { Label, FieldSet, Legend, Input } from "./Form-Elements";
 
-const Form = styled.form``;
+const Form = styled.form`
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  transition: transform 0.9s ease-out;
+  transform: ${(props) => (props.position ? "" : "translateY(85%)")};
+  z-index: 6;
+`;
 
 const InputLabel = styled(Label)``;
 
