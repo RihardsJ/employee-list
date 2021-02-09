@@ -6,8 +6,8 @@ import ascending from "../Utils/Ascending-Sort";
 import descending from "../Utils/Descending-Sort";
 
 const Select = styled.select`
-  color: red;
-  background-color: white;
+  color: var(--red);
+  background-color: var(--white);
   padding: 0.25rem 1rem;
   font-size: 1.1rem;
 `;
