@@ -1,16 +1,7 @@
-import React, {useState} from 'react';
-
-
+import React, { useState } from "react";
 
 const InputField = () => {
-    // const [nameList, setNameList] = useState(["Jonathan", "Mary"]);
-
-    return (
-        <>
-        Component here
-        </>
-
-    )
+  return <>Employee List</>;
 };
 
 export default InputField;
